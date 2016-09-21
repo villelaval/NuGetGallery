@@ -440,6 +440,7 @@ namespace NuGetGallery.Authentication
 
             return new CredentialViewModel
             {
+                Key = credential.Key,
                 Type = credential.Type,
                 TypeCaption = FormatCredentialType(credential.Type),
                 Identity = credential.Identity,
@@ -448,7 +449,8 @@ namespace NuGetGallery.Authentication
                 Expires = credential.Expires,
                 LastUsed = credential.LastUsed,
                 Kind = kind,
-                AuthUI = auther?.GetUI()
+                AuthUI = auther?.GetUI(),
+                Description = credential.Description
             };
         }
 

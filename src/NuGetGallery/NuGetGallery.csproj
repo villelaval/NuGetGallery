@@ -810,6 +810,10 @@
     <Compile Include="Migrations\201609092255576_AddIndexUsersEmail.Designer.cs">
       <DependentUpon>201609092255576_AddIndexUsersEmail.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201609211206577_ApiKeyDescription.cs" />
+    <Compile Include="Migrations\201609211206577_ApiKeyDescription.Designer.cs">
+      <DependentUpon>201609211206577_ApiKeyDescription.cs</DependentUpon>
+    </Compile>
     <Compile Include="OData\Conventions\CompositeODataKeyHelper.cs" />
     <Compile Include="OData\Conventions\EntitySetPropertyRoutingConvention.cs" />
     <Compile Include="OData\ODataServiceVersionHeaderPropagatingBatchHandler.cs" />
@@ -1927,6 +1931,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201609092255576_AddIndexUsersEmail.resx">
       <DependentUpon>201609092255576_AddIndexUsersEmail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201609211206577_ApiKeyDescription.resx">
+      <DependentUpon>201609211206577_ApiKeyDescription.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Strings.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
