@@ -815,6 +815,7 @@
     <Compile Include="Diagnostics\IDiagnosticsService.cs" />
     <Compile Include="Diagnostics\IDiagnosticsSource.cs" />
     <Compile Include="Configuration\StorageType.cs" />
+    <Content Include="App_Data\Files\Content\Home.html" />
     <Content Include="bin\NuGetGallery.dll.config">
       <SubType>Designer</SubType>
     </Content>
@@ -1381,6 +1382,8 @@
     </Content>
     <Content Include="Areas\Admin\DynamicData\FieldTemplates\Url_Edit.ascx" />
     <Content Include="Areas\Admin\DynamicData\PageTemplates\ListDetails.aspx" />
+    <Content Include="Branding\Content\Images\headerbackground.png" />
+    <Content Include="Branding\Content\Layout.css" />
     <Content Include="Content\admin\SupportRequestStyles.css" />
     <Content Include="Content\themes\base\images\animated-overlay.gif" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
@@ -1641,7 +1644,6 @@
   </ItemGroup>
   <ItemGroup>
     <CodeAnalysisDictionary Include="Properties\CodeAnalysisDictionary.xml" />
-    <Content Include="App_Data\Files\Content\Home.html" />
     <Content Include="App_Offline-Planned.htm" />
     <Content Include="App_Offline-Unplanned.htm" />
     <Content Include="Areas\Admin\DynamicData\Content\GridViewPager.ascx" />
