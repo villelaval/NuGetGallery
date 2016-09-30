@@ -1382,8 +1382,12 @@
     </Content>
     <Content Include="Areas\Admin\DynamicData\FieldTemplates\Url_Edit.ascx" />
     <Content Include="Areas\Admin\DynamicData\PageTemplates\ListDetails.aspx" />
-    <Content Include="Branding\Content\Images\headerbackground.png" />
-    <Content Include="Branding\Content\Layout.css" />
+    <Content Include="Branding\Content\Images\headerbackground.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Branding\Content\Layout.css">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Content\admin\SupportRequestStyles.css" />
     <Content Include="Content\themes\base\images\animated-overlay.gif" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
@@ -1462,7 +1466,7 @@
     <Content Include="Content\themes\custom\images\ui-icons_888888_256x240.png" />
     <Content Include="Content\themes\custom\images\ui-icons_cd0a0a_256x240.png" />
     <Content Include="D3 LICENSE.txt" />
-    <Content Include="DeclareParameters.xml" />
+    <Content Include="parameters.xml" />
     <Content Include="NuGetGallery.dll.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <SubType>Designer</SubType>
