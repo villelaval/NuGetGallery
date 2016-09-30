@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<parameters>
+
+  <parameter
+      name="connectionStrings/Gallery.SqlServer"
+      defaultValue="Data Source=(localdb)\v11.0; Initial Catalog=NuGetGallery; Integrated Security=True; MultipleActiveResultSets=True"
+      description="Gallery SQL Server">
+    <parameterEntry
+      kind="XmlFile"
+      scope="\\web.config$"
+      match="/configuration/connectionStrings/add[@name='Gallery.SqlServer']/@connectionString" />
+  </parameter>
+
+  <parameter
+      name="connectionStrings/Gallery.SupportRequestSqlServer"
+      defaultValue="Data Source=(localdb)\v11.0; Initial Catalog=SupportRequest; Integrated Security=True; MultipleActiveResultSets=True"
+      description="Support Request SQL Server">
+    <parameterEntry
+      kind="XmlFile"
+      scope="\\web.config$"
+      match="/configuration/connectionStrings/add[@name='Gallery.SupportRequestSqlServer']/@connectionString" />
+  </parameter>
+
+  <!-- appSettings -->
+
+  <parameter
+    name="appSettings/Gallery.Environment"
+    defaultValue="Development"
+    description="Gallery Environment">
+    <parameterEntry
+      kind="XmlFile"
+      scope="\\web.config$"
+      match="/configuration/appSettings/add[@key='Gallery.Environment']/@value" />
+  </parameter>
+
+  <parameter
+    name="appSettings/Gallery.WarningBanner"
+    defaultValue=""
+    description="Banner warning on the top - leave blank to remove the banner from the site.">
+    <parameterEntry
+      kind="XmlFile"
+      scope="\\web.config$"
+      match="/configuration/appSettings/add[@key='Gallery.WarningBanner']/@value" />
+  </parameter>
+
+  <parameter
+    name="appSettings/Gallery.SiteRoot"
+    defaultValue="http://nuget.localtest.me/"
+    description="Set this to the Azure CDN Host you are using for blob storage, if you have configured one">
+    <parameterEntry
+      kind="XmlFile"
+      scope="\\web.config$"
+      match="/configuration/appSettings/add[@key='Gallery.SiteRoot']/@value" />
+  </parameter>
+
+  <parameter
+    name="appSettings/Gallery.SmtpUri"
+    defaultValue=""
+    description="SmtpUri is expected to be of the format: smtps://username:password@host:port.">
+    <parameterEntry
+      kind="XmlFile"
+      scope="\\web.config$"
+      match="/configuration/appSettings/add[@key='Gallery.SmtpUri']/@value" />  
+  </parameter>
+    
+  <parameter
+    name="appSettings/Gallery.RequireSSL"
+    defaultValue="false"
+    description="Gallery require SSL">
+    <parameterEntry
+      kind="XmlFile"
+      scope="\\web.config$"
+      match="/configuration/appSettings/add[@key='Gallery.RequireSSL']/@value" />  
+  </parameter>
+    
+  <parameter
+    name="appSettings/Gallery.Brand"
+    defaultValue="NuGet Gallery"
+    description="Gallery Brand">
+    <parameterEntry
+      kind="XmlFile"
+      scope="\\web.config$"
+      match="/configuration/appSettings/add[@key='Gallery.Brand']/@value" />  
+  </parameter>
+    
+  <parameter
+    name="appSettings/Gallery.GalleryOwner"
+    defaultValue="NuGet Gallery &lt;support@nuget.org&gt;"
+    description="Gallery Owner">
+    <parameterEntry
+      kind="XmlFile"
+      scope="\\web.config$"
+      match="/configuration/appSettings/add[@key='Gallery.GalleryOwner']/@value" />  
+  </parameter>
+    
+  <parameter
+    name="appSettings/Gallery.GalleryNoReplyAddress"
+    defaultValue="NuGet Gallery &lt;noreply@nuget.org&gt;"
+    description="Gallery NoReply Address">
+    <parameterEntry
+      kind="XmlFile"
+      scope="\\web.config$"
+      match="/configuration/appSettings/add[@key='Gallery.GalleryNoReplyAddress']/@value" />  
+  </parameter>
+    
+  <parameter
+    name="appSettings/Feature.TrackPackageDownloadCountInLocalDatabase"
+    defaultValue="false"
+    description="Track Package Download Count In Local Database">
+    <parameterEntry
+      kind="XmlFile"
+      scope="\\web.config$"
+      match="/configuration/appSettings/add[@key='Feature.TrackPackageDownloadCountInLocalDatabase']/@value" />  
+  </parameter>
+  
+</parameters>

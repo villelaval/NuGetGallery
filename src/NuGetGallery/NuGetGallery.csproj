@@ -1462,6 +1462,7 @@
     <Content Include="Content\themes\custom\images\ui-icons_888888_256x240.png" />
     <Content Include="Content\themes\custom\images\ui-icons_cd0a0a_256x240.png" />
     <Content Include="D3 LICENSE.txt" />
+    <Content Include="DeclareParameters.xml" />
     <Content Include="NuGetGallery.dll.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <SubType>Designer</SubType>
