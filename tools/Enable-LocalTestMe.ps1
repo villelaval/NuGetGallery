@@ -11,8 +11,8 @@ function Get-SiteCertificate([string] $Store, [switch] $UseLocalMachine) {
 
 function Find-MakeCert() {
     # Find Windows SDK
-    $SDKVersion = dir 'HKLM:\SOFTWARE\Wow6432Node\Microsoft\Microsoft SDKs\Windows' | 
-        where { $_.PSChildName -match "v(?<ver>\d+\.\d+)" } | 
+    $SDKVersion = dir 'HKLM:\SOFTWARE\Wow6432Node\Microsoft\Microsoft SDKs\Windows' |
+        where { $_.PSChildName -match "v(?<ver>\d+\.\d+)" } |
         foreach { New-Object System.Version $($matches["ver"]) } |
         sort -desc |
         select -first 1
@@ -30,13 +30,13 @@ function Find-MakeCert() {
     }
 
     [string] $candidatePath = Join-Path $WinSDKDir "bin\$xArch\makecert.exe"
-    
+
     # If registry scan finds wrong path, try the Azure extension's makecert
     if(!(Test-Path $candidatePath)) {
         if($xArch = "x64"){
-            $candidatePath = "${env:ProgramFiles(x86)}/Microsoft Visual Studio 14.0\Common7\IDE\Extensions\Microsoft\Microsoft Azure Data Lake Tools for Visual Studio 2015\2.0.6000.0\CppSDK\SDK\bin\makecert.exe"
+            $candidatePath = "${env:ProgramFiles(x86)}/Microsoft Visual Studio 14.0\Common7\IDE\Extensions\Microsoft\Microsoft Azure Data Lake Tools for Visual Studio 2015\2.2.1000.0\CppSDK\SDK\bin\makecert.exe"
         } else {
-            $candidatePath = "${env:ProgramFiles}/Microsoft Visual Studio 14.0\Common7\IDE\Extensions\Microsoft\Microsoft Azure Data Lake Tools for Visual Studio 2015\2.0.6000.0\CppSDK\SDK\bin\makecert.exe"
+            $candidatePath = "${env:ProgramFiles}/Microsoft Visual Studio 14.0\Common7\IDE\Extensions\Microsoft\Microsoft Azure Data Lake Tools for Visual Studio 2015\2.2.1000.0\CppSDK\SDK\bin\makecert.exe"
         }
     }
 
@@ -100,7 +100,7 @@ if($siteCert.Length -eq 0) {
 
 # Find IIS Express
 if(!$AppCmdPath) {
-    $IISXVersion = dir 'HKLM:\Software\Microsoft\IISExpress' | 
+    $IISXVersion = dir 'HKLM:\Software\Microsoft\IISExpress' |
         foreach { New-Object System.Version ($_.PSChildName) } |
         sort -desc |
         select -first 1
@@ -120,7 +120,7 @@ if(!(Test-Path $AppCmdPath)) {
 }
 
 # Enable access to the necessary URLs
-# S-1-1-0 is the unlocalized version for: user=Everyone 
+# S-1-1-0 is the unlocalized version for: user=Everyone
 Invoke-Netsh http add urlacl "url=http://$(Get-SiteHttpHost)/" "sddl=D:(A;;GX;;;S-1-1-0)"
 Invoke-Netsh http add urlacl "url=https://$(Get-SiteHttpsHost)/" "sddl=D:(A;;GX;;;S-1-1-0)"
 
@@ -134,9 +134,9 @@ if($sites.Length -gt 0) {
 
 &$AppCmdPath add site /name:"$SiteFullName" /bindings:"http://$(Get-SiteHttpHost),https://$(Get-SiteHttpsHost)" /physicalPath:$SitePhysicalPath
 
-if ($siteCert -eq $null) { 
+if ($siteCert -eq $null) {
     # Generate one
-    $siteCert = Initialize-SiteCertificate 
+    $siteCert = Initialize-SiteCertificate
 }
 
 Write-Host "Using SSL Certificate: $($siteCert.Thumbprint)"
